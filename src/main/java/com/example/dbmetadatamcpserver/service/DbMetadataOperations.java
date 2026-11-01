@@ -174,7 +174,7 @@ public class DbMetadataOperations {
             String pkName = null;
             try (ResultSet rs = md.getPrimaryKeys(null, realSchema, realTable)) {
                 while (rs.next()) {
-                    pk.put(rs.getInt("KEY_SEQ"), rs.getString("COLUMN_NAME"));
+                    pk.put(rs.getInt("KEY_SEQ"), rs.getString(COLUMN_NAME));
                     pkName = rs.getString("PK_NAME");
                 }
             }

@@ -1,6 +1,6 @@
 # DB Metadata MCP Server (`db-metadata-mcp`)
 
-`db-metadata-mcp` is a Model Context Protocol (MCP) server built with **Spring Boot** and **Spring AI MCP**. It exposes read-only database metadata operations over **stdio**, allowing AI agents (such as Claude Code, Claude Desktop, and other MCP-compatible clients) to securely inspect PostgreSQL databases, understand table structures, analyze relationships, inspect security privileges, and generate entity or query models.
+`db-metadata-mcp` is a Model Context Protocol (MCP) server built with **Spring Boot** and **Spring AI MCP** for **PostgreSQL**. It exposes read-only database metadata operations over **stdio**, allowing AI agents (such as Claude Code, Claude Desktop, and other MCP-compatible clients) to securely inspect PostgreSQL databases, understand table structures, analyze relationships, inspect security privileges, and generate entity or query models.
 
 ## Security Considerations
 
@@ -205,3 +205,7 @@ Once configured, restart your AI agent (Claude Code or Claude Desktop). You can 
 * *"List all the schemas in my connected database."*
 * *"Show me the table structure and foreign keys for public.users."*
 * *"Find the shortest join path between orders and customers."*
+
+## License
+
+This project is licensed under the [Apache License, Version 2.0](LICENSE).
