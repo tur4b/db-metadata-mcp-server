@@ -1,0 +1,25 @@
+spring:
+  main:
+    banner-mode: off
+    web-application-type: none
+  application:
+    name: db-metadata-mcp
+  ai:
+    mcp:
+      server:
+        enabled: true
+        name: db-metadata-mcp
+        version: 1.0.0
+        stdio: true
+        type: sync
+  datasource:
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:simpleDB}
+    driver-class-name: org.postgresql.Driver
+
+logging:
+  pattern:
+    console:                     # empty value disables console logging
+  file:
+    name: ./db-metadata-mcp.log
