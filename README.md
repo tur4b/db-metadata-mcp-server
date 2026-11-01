@@ -163,7 +163,7 @@ Add the server entry to your Claude configuration file (typically located under 
 Alternatively, register it directly using the Claude CLI:
 
 ```bash
-claude mcp add db-metadata-mcp java -- -jar /path/to/your/db-metadata-mcp/target/db-metadata-mcp-1.0.0.jar
+claude mcp add db-metadata-mcp java -- -jar /path/to/your/db-metadata-mcp-server/target/db-metadata-mcp-1.0.0.jar
 ```
 
 ### 2. Claude Desktop Configuration
