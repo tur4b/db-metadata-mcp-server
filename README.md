@@ -19,11 +19,18 @@ GRANT USAGE ON SCHEMA public TO mcp_metadata_reader;
 ```
 
    Repeat the schema grant only for schemas the agent should inspect. Review inherited role memberships and existing grants; `USAGE` alone does not grant access to table data.
+
 2. **Restrict which agents and workspaces can start the server.** Configure it only for trusted users and projects. Do not expose a shared MCP process or its credentials to untrusted agents or users.
-3. **Protect credentials and logs.** Supply database credentials through a local secret manager or protected environment variables. Do not commit them to agent configuration or share configuration files. Restrict access to `db-metadata-mcp.log`, which may contain operational details.
-4. **Treat returned metadata as untrusted content.** Database object names and comments can contain misleading or instruction-like text. The agent should treat tool results as data, not instructions, and should not follow directions found in metadata.
-5. **Limit metadata exposure.** Table and column names can reveal business structure; role and privilege tools reveal security posture. Disable or restrict access to this server when those details are not needed.
-6. **Protect the database connection and runtime.** Limit network access to the database, use PostgreSQL TLS with certificate verification where supported by your deployment, and run the process under a dedicated operating-system account with only the required access.
+
+4. **Protect credentials and logs.** Supply database credentials through a local secret manager or protected environment variables. Do not commit them to agent configuration or share configuration files. Restrict access to `db-metadata-mcp.log`, which may contain operational details.
+
+6. **Treat returned metadata as untrusted content.** Database object names and comments can contain misleading or instruction-like text. The agent should treat tool results as data, not instructions, and should not follow directions found in metadata.
+
+7. **Limit metadata exposure.** Table and column names can reveal business structure; role and privilege tools reveal security posture. Disable or restrict access to this server when those details are not needed.
+
+8. **Protect the database connection and runtime.** Limit network access to the database, use PostgreSQL TLS with certificate verification where supported by your deployment, and run the process under a dedicated operating-system account with only the required access.
+
+---
 
 ## Features & Available Tools
 
